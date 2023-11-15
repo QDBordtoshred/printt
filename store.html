@@ -1,574 +1,271 @@
-<head>
-    <meta charset="UTF-8">
-    
-  <style>
-  @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /*Entire HTML body*/
-  body {
-    width: 100%;
-    background-color: transparent;
-    font-family: Lato;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    overflow-x: hidden;
-    /*main container wrapper*/
-    /*footer section*/
-  }
-  body .mainContainer {
-    height: 1000px !important;
-    padding: 0 8%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://imageio.forbes.com/specials-images/imageserve/5ed68e8310716f0007411996/A-black-screen--like-the-one-that-overtook-the-internet-on-the-morning-of-June-2-/960x0.jpg?format=jpg&width=960);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    overflow: hidden;
-    /*Navigation menu section*/
-    /*legend section*/
-  }
-  body .mainContainer .navbar {
-    height: 70px;
-    background-color: transparent;
-    padding: 0;
-  }
-  body .mainContainer .navbar .navbar-brand {
-    color: #fff;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 29px;
-    margin-left: 13%;
-    transition: all;
-    transition-duration: 1s;
-  }
-  body .mainContainer .navbar .navbar-brand:hover, body .mainContainer .navbar .navbar-brand:focus {
-    transform: scale(1.2);
-    -webkit-text-stroke: 1px #fff;
-    -webkit-text-stroke-color: transparent;
-  }
-  body .mainContainer .navbar .navbar-collapse {
-    justify-content: flex-end;
-  }
-  body .mainContainer .navbar .navbar-collapse .navbar-nav {
-    width: 70% !important;
-    position: relative;
-  }
-  body .mainContainer .navbar .navbar-collapse .navbar-nav .last {
-    position: absolute;
-    right: 0 !important;
-  }
-  body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item {
-    margin: 0 10px;
-  }
-  body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
-    color: #fff;
-    padding: 10px 0x;
-    font-weight: 800;
-    transition: all;
-    transition-duration: 1s;
-  }
-  body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover, body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:active, body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:focus {
-    border-bottom: 2px solid #fff;
-    transform: translateY(-5px);
-  }
-  body .mainContainer .legend {
-    margin-top: 130px;
-    height: 770px;
-    color: #fff;
-    /*legend introduction text*/
-  }
-  body .mainContainer .legend .legend__text {
-    width: 100%;
-  }
-  body .mainContainer .legend .legend__text .introText {
-    text-align: center;
-  }
-  body .mainContainer .legend .legend__text .introText .introText__heading {
-    font-size: 40px;
-    line-height: 54px;
-    margin-bottom: 30px;
-    font-weight: 800;
-  }
-  body .mainContainer .legend .legend__text .introText .introText__heading span {
-    opacity: 0.8;
-    font-weight: 400;
-  }
-  body .mainContainer .legend .legend__text .introText .introText__link a {
-    color: #fff;
-    font-weight: 800;
-    padding: 10px 0;
-    border-bottom: 2px solid #fff;
-    transition: all;
-    transition-duration: 1s;
-  }
-  body .mainContainer .legend .legend__text .introText .introText__link a:hover, body .mainContainer .legend .legend__text .introText .introText__link a:focus {
-    text-decoration: none;
-    filter: blur(1px);
-  }
-  body .footer {
-    text-align: center;
-    height: 50px;
-    width: 100%;
-    bottom: 0 !important;
-    background-color: #111;
-    color: #fff;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  body .footer .footer__text a {
-    color: red;
-  }
-  body .footer .footer__text a:hover, body .footer .footer__text a:focus {
-    text-decoration: none;
-  }
-  
-  /*Responsiveness for screens*/
-  @media screen and (max-width: 1600px) {
-    body .mainContainer .navbar .navbar-brand {
-      margin-left: 6%;
-    }
-  }
-  @media screen and (max-width: 1350px) {
-    body .mainContainer .navbar .navbar-brand {
-      margin-left: 2%;
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    body .mainContainer {
-      padding: 0 3%;
-    }
-  }
-  @media screen and (max-width: 1000px) {
-    body .mainContainer {
-      padding: 0 1%;
-    }
-    body .mainContainer .navbar .navbar-nav .last {
-      position: relative !important;
-    }
-  }
-  @media screen and (max-width: 767px) {
-    body .mainContainer {
-      padding: 0 2%;
-      height: 800px !important;
-    }
-    body .mainContainer .navbar {
-      margin-bottom: 200px;
-    }
-    body .mainContainer .navbar .navbar-brand {
-      margin-left: 0 !important;
-    }
-    body .mainContainer .navbar .navbar-collapse .navbar-nav {
-      width: 100% !important;
-      background-color: #333;
-    }
-    body .mainContainer .navbar .navbar-collapse .navbar-nav .last {
-      position: relative !important;
-    }
-    body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover, body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:active, body .mainContainer .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:focus {
-      border-bottom: 2px solid #fff;
-      transform: translateY(-5px);
-    }
-    body .mainContainer .legend {
-      height: 550px;
-    }
-    body .mainContainer .legend .legend__text {
-      padding: 0;
-      height: 400px !important;
-    }
-    body .mainContainer .legend .legend__text .introText {
-      width: 100%;
-      text-align: center;
-    }
-    body .mainContainer .legend .legend__text .introText .introText__heading {
-      font-size: 32px;
-    }
-  }
-  </style>
-  
-    <script>
-    window.console = window.console || function(t) {};
-  </script>
-  
-    
-    
-  </head>
-  
-  <body translate="no">
-    <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Creators is a startup that helps content creators such as videographers, photographers, monetize their creative work." />
-  
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-  
-    <title>SlamStreet</title>
-  </head>
-  
-  <body>
-    <!-- main container wrapper -->
-    <div class="container-fluid mainContainer">
-      <!-- Navigation menu section -->
-      <nav class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand" href="jj">SlamStreet</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="store">Store</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="search">Search</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="help">Help</a>
-            </li>
-            <li class="nav-item last">
-              <a class="nav-link" href="cart">Cart 0</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
+  
 
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+  
+
+  <title>CodePen - One day i will be done</title>
+
+    <link rel="canonical" href="https://codepen.io/TIMMMYYYHHH/pen/BaWbGQz">
+  
+  
+  
+  
 <style>
-@import url("//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
-html {
-  box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Quicksand;
+}
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #131313;
+}
+.price {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	backdrop-filter: blur(8px);
+	background-color: rgba(0, 0, 0, 0.112);
+	box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+	border: 0px rgba(255, 255, 255, 0.4) solid;
+	border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+	border-right: 0px rgba(40, 40, 40, 0.35) solid;
+	padding: 5px 10px;
+	font-size: 0.8em;
+	border-radius: 4px;
 }
 
-*, *::after, *::before {
-  box-sizing: inherit;
+.container {
+	position: relative;
+	padding: 0 20px;
+}
+.container .card {
+	position: relative;
+	width: 320px;
+	height: 450px;
+	border-radius: 20px;
+	background: linear-gradient(315deg, #111111, #141414);
+	box-shadow: -20px -20px 25px #0e0e0e, 20px 20px 25px #181818;
+	overflow: hidden;
+}
+.container .card:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #9bdc28;
+	clip-path: circle(150px at 80% 20%);
+	transition: 0.5s ease-in-out;
+}
+.container .asics:before {
+	background: #155eb4;
+}
+.container .adidas:before {
+	background: #dadae8;
+}
+.container .new-balance:before {
+	background: #8a8576;
+}
+.container .card:hover:before {
+	clip-path: circle(300px at 80% -20%);
+}
+.container .card:after {
+	content: "";
+	position: absolute;
+	top: 30%;
+	left: -20%;
+	font-size: 12em;
+	font-weight: 800;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.04);
+}
+.container .asics:after {
+	content: "Asics";
+}
+.container .adidas:after {
+	content: "Adidas";
+}
+.container .new-balance:after {
+	content: "new-balance";
+}
+.container .card .imgBx {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 200;
+	width: 100%;
+	height: 220px;
+	transition: 0.5s ease-in-out;
+}
+.container .card:hover .imgBx {
+	top: 0%;
+	transform: translateY(0%);
+}
+.container .card .imgBx img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-25deg);
+	width: 270px;
+}
+.container .card .contentBx {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	transition: 1s;
+	z-index: 10;
+}
+.container .card:hover .contentBx {
+	height: 210px;
+}
+.container .card .contentBx h2 {
+	position: relative;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #fff;
+}
+/* Shoe Size */
+.container .card .contentBx .size,
+.container .card .contentBx .color {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 20px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+}
+.container .card:hover .contentBx .size {
+	opacity: 1;
+	visibility: visible;
+	translate-delay: 0.5s;
+}
+.container .card:hover .contentBx .color {
+	opacity: 1;
+	visibility: visible;
+	translate-delay: 0.6s;
+}
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
+	color: #fff;
+	font-weight: 300;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-right: 10px;
+}
+.container .card .contentBx .size span {
+	width: 26px;
+	height: 26px;
+	text-align: center;
+	line-height: 26px;
+	font-size: 14px;
+	display: inline-block;
+	color: #111;
+	background: #fff;
+	margin: 0 5px;
+	transition: 0.5s;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.container .asics .contentBx .size span:hover {
+	background: #155eb4;
+}
+.container .adidas .contentBx .size span:hover {
+	background: #99243a;
+}
+.container .new-balance .contentBx .size span:hover {
+	background: #8a8576;
 }
 
-.color1, .group-two, .colors > li:nth-child(1) {
-  background-color: #d33f4b;
+/* Shoe color */
+.container .card .contentBx .color span {
+	width: 20px;
+	height: 20px;
+	background: #ff0;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+}
+.container .card .contentBx .color span:nth-child(2) {
+	background: #155eb4;
+}
+.container .card .contentBx .color span:nth-child(3) {
+	background: red;
+}
+.container .card .contentBx .color span:nth-child(4) {
+	background: black;
 }
 
-.color2, .colors > li:nth-child(2) {
-  background-color: #545151;
+/* Button/ */
+.container .card .contentBx button {
+	display: inline-block;
+	padding: 10px 20px;
+	background: #fff;
+	border-radius: 4px;
+	margin-top: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	color: #111;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: 0.5s;
+	border: none;
+}
+.container .card:hover .contentBx button {
+	opacity: 1;
+	transform: translateY(0px);
+	transform-delay: 0.75s;
+	cursor: pointer;
 }
 
-.color3, .colors > li:nth-child(3) {
-  background-color: #5695c3;
+.info {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	color: #fff;
+	cursor: pointer;
+	z-index: 300;
 }
 
-.color4, .colors > li:nth-child(4) {
-  background-color: #0F8A5F;
-}
 
-.color5, .colors > li:nth-child(5) {
-  background-color: #235E6F;
+.text {
+	display:none;
+	color:#fff;
+	padding:2em;
+	z-index: 299;
+	position: relative;
+	backdrop-filter: blur(20px);
+	background-color: rgba(0, 0, 0, 0.2);
+	height:100%;
+	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
-
-.shoe--name {
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  display: flex;
-  flex-direction: column;
-}
-
-.shoe--price {
-  color: #949494;
-}
-
-.group {
-  min-height: 760px;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-image: url(https://bit.ly/2lpu3Uh);
-  background-blend-mode: multiply;
-}
-.group .group--container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 0 60px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.group .group--title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-transform: uppercase;
-  margin-bottom: 100px;
-}
-.group .group--title h1, .group .group--title h2, .group .group--title h3, .group .group--title h4 {
-  font-family: "Roboto";
-  font-weight: 700;
-  font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
-  font-size: 32px;
-  margin: 0 0 10px 0;
-}
-.group .group--title h1:before, .group .group--title h2:before, .group .group--title h3:before, .group .group--title h4:before {
-  content: "";
-  display: block;
-  border-top: 4px solid #7e7e7e;
-  padding-top: 18px;
-  width: 43%;
-  margin: 0 auto;
-}
-.group .group--subtitle {
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  color: #777;
-  letter-spacing: 0.6px;
-}
-
-.card {
-  width: 315px;
-  height: 400px;
-  background: #686868;
-  margin: 0 15px;
-  padding: 60px 33px 12px 33px;
-  box-sizing: border-box;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.04);
-  border-radius: 2px;
-  position: relative;
-  display: block;
-}
-.card .shoe img {
-  max-width: 100%;
-  width: 350px;
-  margin-bottom: 120px;
-  position: relative;
-}
-.card .shoe--info {
-  position: absolute;
-  bottom: -70px;
-  text-align: center;
-  width: 100%;
-  left: 0;
-}
-.card .shoe--info .shoe--name {
-  margin-bottom: 8px;
-}
-.card .shoe--info .shoe--price {
-  font-weight: 400;
-  color: #757575;
-  font-size: 14px;
-}
-.card .shoe--colors {
-  padding: 23px 0 0 0;
-  border-top: 1px solid #f4f4f5;
-  bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-}
-
-.colors {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-.colors > li {
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 4px;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition-duration: 0.2s;
-  transition: all ease 1s;
-}
-.colors > li:hover {
-  transform: scale(1.09);
-  transition: all ease 1s;
-}
-.buy-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  outline: 0;
-  background-color: transparent;
-  box-shadow: none;
-  border: 2px solid #afafaf;
-  text-transform: uppercase;
-  padding: 8px 19px;
-  display: flex;
-  align-items: center;
-  border-radius: 3px;
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  color: #000000;
-}
-
-.card--style2 {
-  width: 330px;
-  height: 360px;
-  padding: 0;
-  position: relative;
-  padding-bottom: 80px;
-  box-sizing: border-box;
-}
-.card--style2 .shoe {
-  padding-bottom: 50px;
-  position: absolute;
-  bottom: 0;
-  will-change: transform;
-  transform-origin: center center;
-  transform: scale(1);
-  transition: all 0.5s ease;
-}
-.card--style2 .shoe:before {
-  content: "";
-  display: block;
-  background: #000000;
-  height: 310px;
-  width: 200px;
-  position: absolute;
-  bottom: 50px;
-  left: 90px;
-}
-.card--style2 .shoe img {
-  width: 100%;
-  position: relative;
-}
-.card--style2 .shoe--info {
-  position: relative;
-  left: 24px;
-  top: 60px;
-  z-index: 20;
-  will-change: transform;
-  transform: scale(1);
-  transition: all 0.4s ease;
-  transform-origin: center center;
-}
-.card--style2 .shoe--name:before {
-  content: "";
-  padding-top: 13px;
-  width: 190px;
-}
-.card--style2 .shoe--colors {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.card--style2 .shoe--colors .colors {
-  width: auto;
-  margin: 0 auto;
-  position: relative;
-  left: 10px;
-  will-change: transform;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: all 0.33s ease-in;
-  transition-delay: 0.153s;
-}
-.card--style2:hover .shoe--colors .colors {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.33s ease-out;
-  transition-delay: 0.253s;
-}
-.card--style2:hover .shoe {
-  transform: scale(1.06);
-  transition: all 0.5s ease;
-}
-.card--style2:hover .shoe--info {
-  transform: scale(0.95);
-  transition: all 0.4s ease;
-}
-.card--style2.card--one .shoe--name:before {
-  border-top: 5px solid red;
-}
-.card--style2.card--two .shoe--name:before {
-  border-top: 5px solid rgb(63, 63, 63);
-}
-.card--style2.card--three .shoe--name:before {
-  border-top: 5px solid #5695c3;
-}
-
-.group-one {
-  background-color: #3b3b3b;
-  background-image: none;
-}
-.group-one .group--title h1:before, .group-one .group--title h2:before, .group-one .group--title h3:before, .group-one .group--title h4:before {
-  border-color: #d33f4b;
-}
-
-.group-two .group--title {
-  color: rgba(43, 42, 42, 0.85);
-}
-.group-two .group--title h1:before, .group-two .group--title h2:before, .group-two .group--title h3:before, .group-two .group--title h4:before {
-  border-color: rgba(250, 250, 250, 0.9);
-}
-.group-two .group--subtitle {
-  color: rgba(250, 250, 250, 0.85);
-}
-.group-two .is--active {
-  transform: scale(1.2);
-  transform-origin: center center;
-}
-.group-two .shoe--info .shoe--name {
-  color: #fff;
-}
-.group-two .shoe--info .shoe--price {
-  color: #fff;
-}
-
-.group-three {
-  background-image: none;
-  background-color: #000000;
-}
-.group-three .shop-all {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 120px 0 0 0;
-}
-.group-three .shop-all .button {
-  border: 3px solid #444;
-  outline: 0;
-  background-color: transparent;
-  border-radius: 2px;
-  padding: 9px 18px;
-  font-size: 13px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.23s ease;
-  transform: scale(1);
-}
-.group-three .shop-all .button:hover {
-  background-color: #464646;
-  color: #323232;
-  transform: scale(1.05);
-  transition: all 0.23s ease;
+.info:hover + .text{
+	display:block;
 }
 </style>
 
@@ -581,144 +278,111 @@ html {
 </head>
 
 <body translate="no">
-  <div class="group group-three">
-  <div class="group--container">
-    
-    <div class="group--title" data-aos="zoom-out-up" data-aos-offset="500">
-      <h2>Air Max Premium</h2>
-      <div class="group--subtitle">
-         If the Shoe Fits Hover It. 
-      <!--  If the Shoe Fits Card UI Experiment -->
-      </div>
-    </div>
-    
-    <div class="card--style2 card--one" data-aos="fade-up">
-      
-      <div class="shoe--info">
-        <span class="shoe--name">
-            NIKE AIR MAX PREMIUM
-        </span>
-        <span class="shoe--price">
-          $150
-        </span>
-      </div> 
-      
-      <div class="shoe">
-        <img src="https://restocks.net/_next/image/?url=https%3A%2F%2Fcdn.restocks.net%2Fcdn-cgi%2Fimage%2Fwidth%3D1000%2Fstorage%2Fimages%2Fproducts%2F554724-413%2F1.png&w=3840&q=75" alt="nike air max premium red" />
-      </div>
-      
-       <div class="shoe--colors">
-          
-          <ul class="colors">
-            <li data-color="#F5624D"></li>
-            <li data-color="#CC231E" class="active-color" ></li>
-            <li data-color="#34A65F"></li>
-          </ul>
-        
-        </div>
+  <head>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6ab9ac06da.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="container ">
+		<div class="card asics">
+			<p class="price">$65 USD</p>
+			
+				<i class="info fas fa-info-circle"></i>
+				<p class="text">
+					Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised heel drop sides unique silhouette. Bow detail metallic eyelets leather lining luxurious finish classic courts formal slingback square toe contrasting cap. Lace up fastening bow detailing high stiletto heel leather lining beautiful lace upper elegant peep toe t-bar strap. Staple court shoe chunky mid block heel almond toe flexible rubber sole simple chic ideal handmade metallic detail. Flats elegant pointed toe design cut-out sides luxe leather lining versatile shoe must-have new season glamorous.
+				</p>
+			
+			<div class="imgBx">
+				<img src="https://i.imgur.com/KuyqTcl.png" alt="a pair of blue and red ASICS sneakers">
+			</div>
+			<div class="contentBx  ">
+				<h2>Asics</h2>
+				<div class="size">
+					<h3>Size :</h3>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>10</span>
+				</div>
+				<div class="color">
+					<h3>Color:</h3>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<button> Add to Cart</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container ">
+		<div class="card adidas">
+			<p class="price">$30 USD</p>
+			<i class="info fas fa-info-circle"></i>
+				<p class="text">
+					Effortless comfortable full leather lining eye-catching   unique detail to the toe low 'cut-away' sides 					clean and sleek. Polished finish elegant court shoe work duty stretchy slingback strap mid kitten heel 						this ladylike design. Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point 								raised heel drop sides unique silhouette. Effortless comfortable full leather lining eye-catching unique 					detail to the toe low 'cut-away' sides clean and sleek.
+				</p>
+			<div class="imgBx">
+				<img src="https://i.imgur.com/V3azz7X.png" alt="a pair of white Adidas sneakers with red and blue trim">
+			</div>
+			<div class="contentBx  ">
+				<h2>Adidas</h2>
+				<div class="size">
+					<h3>Size :</h3>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>10</span>
+				</div>
+				<div class="color">
+					<h3>Color:</h3>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<button> Add to Cart</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container ">
+		<div class="card new-balance">
+			<p class="price">$45 USD</p>
+			<i class="info fas fa-info-circle"></i>
+				<p class="text">
+					Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised heel drop sides unique silhouette. Bow detail metallic eyelets leather lining luxurious finish classic courts formal slingback square toe contrasting cap. Lace up fastening bow detailing high stiletto heel leather lining beautiful lace upper elegant peep toe t-bar strap. Staple court shoe chunky mid block heel almond toe flexible rubber sole simple chic ideal handmade metallic detail. Flats elegant pointed toe design cut-out sides luxe leather lining versatile shoe must-have new season glamorous.
+				</p>
+			<div class="imgBx">
+				<img src="https://i.imgur.com/2YRJN6g.png" alt="a New Balance sneaker in olive drab with a black logo">
+			</div>
+			<div class="contentBx">
+				<h2>New Balance</h2>
+				<div class="size">
+					<h3>Size :</h3>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>10</span>
+				</div>
+				<div class="color">
+					<h3>Color:</h3>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<button> Add to Cart</button>
+			</div>
+		</div>
+	</div>
+
+</body>
   
-    </div>
-    
-     <div class="card--style2 card--two" data-aos="fade-up">
-      
-      <div class="shoe--info">
-        <span class="shoe--name">
-            NIKE AIR MAX ESSENTIAL
-        </span>
-        <span class="shoe--price">
-          $150
-        </span>
-      </div> 
-      
-      <div class="shoe">
-          <img src="https://bit.ly/2kRrQxP" alt="nike air max essential black" />
-      </div>
-       
-      
-       <div class="shoe--colors">
-          
-          <ul class="colors">
-            <li data-color="#F5624D"></li>
-            <li data-color="#CC231E" class="active-color" ></li>
-            <li data-color="#34A65F"></li>
-          </ul>
-        
-        </div>
   
-    </div>
-    
-    <div class="card--style2 card--three" data-aos="fade-up">
-      
-      <div class="shoe--info">
-        <span class="shoe--name">
-            NIKE AIR MAX 90
-        </span>
-        <span class="shoe--price">
-          $150
-        </span>
-      </div> 
-      
-      <div class="shoe">
-        <img src="https://bit.ly/2kRsdIN" alt="nike air max 90" />
-      </div>
-      
-         <div class="shoe--colors">
-          
-          <ul class="colors">
-            <li data-color="#F5624D"></li>
-            <li data-color="#CC231E" class="active-color" ></li>
-            <li data-color="#34A65F"></li>
-          </ul>
-        
-        </div>
-  
-    </div>
-    
-    <div class="shop-all">
-      <button class="button">shop collection</button>
-    </div>
-    
-  </div>
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script src='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js'></script>
-      <script id="rendered-js" >
-// Variables
-var colorButton = $(".colors li");
-
-colorButton.on("click", function () {
-  // console.log('clicked');
-
-  // Remove class from currently active button
-  $(".colors > li").removeClass("active-color");
-
-  // Add class active to clicked button
-  $(this).addClass("active-color");
-
-  // Get background color of clicked
-  var newColor = $(this).attr("data-color");
-  // alert(newColor);
-
-  // Change background of everything with class .bg-color
-  $(".merry-christmas").css("background-color", newColor);
-
-  // Change color of everything with class .text-color
-  // $(".text-color").css("color", newColor);
-});
-
-"use strict";!function (t) {t.fn.tilt = function (s) {var i = function () {this.ticking || (requestAnimationFrame(g.bind(this)), this.ticking = !0);},e = function () {t(this).on("mousemove", r), t(this).on("mouseenter", n), this.settings.reset && t(this).on("mouseleave", l);},a = function () {var s = this;void 0 !== this.timeout && clearTimeout(this.timeout), t(this).css({ transition: this.settings.speed + "ms " + this.settings.easing }), this.settings.glare && this.glareElement.css({ transition: "opacity " + this.settings.speed + "ms " + this.settings.easing }), this.timeout = setTimeout(function () {t(s).css({ transition: "" }), s.settings.glare && s.glareElement.css({ transition: "" });}, this.settings.speed);},n = function (s) {this.ticking = !1, t(this).css({ "will-change": "transform" }), a.call(this), t(this).trigger("tilt.mouseEnter");},h = function (s) {return "undefined" == typeof s && (s = { pageX: t(this).offset().left + t(this).outerWidth() / 2, pageY: t(this).offset().top + t(this).outerHeight() / 2 }), { x: s.pageX, y: s.pageY };},r = function (t) {this.mousePositions = h(t), i.call(this);},l = function () {a.call(this), this.reset = !0, i.call(this), t(this).trigger("tilt.mouseLeave");},o = function () {var s = t(this).width(),i = t(this).height(),e = t(this).offset().left,a = t(this).offset().top,n = (this.mousePositions.x - e) / s,h = (this.mousePositions.y - a) / i,r = (this.settings.maxTilt / 2 - n * this.settings.maxTilt).toFixed(2),l = (h * this.settings.maxTilt - this.settings.maxTilt / 2).toFixed(2),o = Math.atan2(this.mousePositions.x - (e + s / 2), -(this.mousePositions.y - (a + i / 2))) * (180 / Math.PI);return { tiltX: r, tiltY: l, percentageX: 100 * n, percentageY: 100 * h, angle: o };},g = function () {return this.transforms = o.call(this), this.reset ? (this.reset = !1, t(this).css("transform", "perspective(" + this.settings.perspective + "px) rotateX(0deg) rotateY(0deg)"), void (this.settings.glare && (this.glareElement.css("transform", "rotate(180deg) scale(1.75)"), this.glareElement.css("opacity", "" + this.settings.maxGlare / 4)))) : (t(this).css("transform", "perspective(" + this.settings.perspective + "px) rotateX(" + ("x" === this.settings.axis ? 0 : this.transforms.tiltY) + "deg) rotateY(" + ("y" === this.settings.axis ? 0 : this.transforms.tiltX) + "deg) scale3d(" + this.settings.scale + "," + this.settings.scale + "," + this.settings.scale + ")"), this.settings.glare && (this.glareElement.css("transform", "rotate(" + this.transforms.angle + "deg) scale(1.75)"), this.glareElement.css("opacity", "" + this.transforms.percentageY * this.settings.maxGlare / 100)), t(this).trigger("change", [this.transforms]), void (this.ticking = !1));},c = function () {if (!this.settings.glarePrerender) {t(this).append('<div class="js-tilt-glare"><div class="js-tilt-glare-inner"></div></div>'), this.glareElementWrapper = t(this).find(".js-tilt-glare"), this.glareElement = t(this).find(".js-tilt-glare-inner");var s = { position: "absolute", top: "0", left: "0", width: "100%", height: "100%" };this.glareElementWrapper.css(s).css({ overflow: "hidden" }), this.glareElement.css(s).css({ "background-image": "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)", opacity: "" + this.settings.maxGlare / 2, transform: "rotate(180deg) scale(1.75)" });}};return t.fn.tilt.destroy = function () {t(this).each(function () {t(this).find(".js-tilt-glare").remove(), t(this).css({ "will-change": "", transform: "" }), t(this).off("mousemove mouseenter mouseleave");});}, t.fn.tilt.getValues = function () {var s = [];return t(this).each(function () {this.mousePositions = h.call(this), s.push(o.call(this));}), s;}, t.fn.tilt.reset = function () {t(this).each(function () {var s = this;this.mousePositions = h.call(this), this.settings = t(this).data("settings"), l.call(this), setTimeout(function () {s.reset = !1;}, this.settings.transition);});}, this.each(function () {var i = this;this.settings = t.extend({ maxTilt: t(this).is("[data-tilt-max]") ? t(this).data("tilt-max") : 20, perspective: t(this).is("[data-tilt-perspective]") ? t(this).data("tilt-perspective") : 300, easing: t(this).is("[data-tilt-easing]") ? t(this).data("tilt-easing") : "cubic-bezier(.03,.98,.52,.99)", scale: t(this).is("[data-tilt-scale]") ? t(this).data("tilt-scale") : "1", speed: t(this).is("[data-tilt-speed]") ? t(this).data("tilt-speed") : "400", transition: !t(this).is("[data-tilt-transition]") || t(this).data("tilt-transition"), axis: t(this).is("[data-tilt-axis]") ? t(this).data("tilt-axis") : null, reset: !t(this).is("[data-tilt-reset]") || t(this).data("tilt-reset"), glare: !!t(this).is("[data-tilt-glare]") && t(this).data("tilt-glare"), maxGlare: t(this).is("[data-tilt-maxglare]") ? t(this).data("tilt-maxglare") : 1 }, s), this.init = function () {t(i).data("settings", i.settings), i.settings.glare && c.call(i), e.call(i);}, this.init();});}, t("[data-tilt]").tilt();}(jQuery);
-
-
-// $('.card').tilt({
-//     // axis: X
-// });
-// }(jQuery);
-
-AOS.init({
-  duration: 1200 });
-//# sourceURL=pen.js
-    </script>
-
   
 </body>
 
