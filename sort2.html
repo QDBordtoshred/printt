@@ -33,10 +33,6 @@
             animation: greenGlow 0.5s infinite alternate;
         }
 
-        .red-glow {
-            animation: redGlow 0.5s infinite alternate;
-        }
-
         @keyframes yellowGlow {
             from {
                 box-shadow: 0 0 5px yellow;
@@ -52,15 +48,6 @@
             }
             to {
                 box-shadow: 0 0 10px green;
-            }
-        }
-
-        @keyframes redGlow {
-            from {
-                box-shadow: 0 0 5px red;
-            }
-            to {
-                box-shadow: 0 0 10px red;
             }
         }
 
@@ -143,18 +130,13 @@
         shoesDivs[index1].classList.remove("yellow-glow");
         shoesDivs[index2].classList.remove("yellow-glow");
 
-        if (shoes[j].price > shoes[j + 1].price) {
-            shoesDivs[index1].classList.add("red-glow");
-            shoesDivs[index2].classList.add("red-glow");
-        } else {
-            shoesDivs[index1].classList.add("green-glow");
-            shoesDivs[index2].classList.add("green-glow");
-        }
+        shoesDivs[index1].classList.add("green-glow");
+        shoesDivs[index2].classList.add("green-glow");
 
         await new Promise(resolve => setTimeout(resolve, 300));
 
-        shoesDivs[index1].classList.remove("red-glow", "green-glow");
-        shoesDivs[index2].classList.remove("red-glow", "green-glow");
+        shoesDivs[index1].classList.remove("green-glow");
+        shoesDivs[index2].classList.remove("green-glow");
     }
 
     // Function to sort the shoes and display the updated list
