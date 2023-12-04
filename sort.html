@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,15 +39,97 @@
 
 <p>Click the button to sort the shoes by price:</p>
 
-<form method="post" th:action="@{/sort}">
-    <button id="sortButton" type="submit">Sort Shoes</button>
-</form>
+<button id="sortButton" onclick="sortShoes()">Sort Shoes</button>
 
-<div id="shoesList" th:each="shoe : ${shoes}">
-    <div class="shoe">
-        <p th:text="${shoe.name + ' - $' + shoe.price}"></p>
-    </div>
+<div id="shoesList">
+    <!-- The list of shoes will be displayed here -->
 </div>
+
+<script>
+    // Array of fictional Jordan shoes with prices
+    var shoes = [
+    { name: "Air Jordan 1 Retro High OG 'Midnight Haze'", price: 220 },
+{ name: "Air Jordan 3 Retro 'Lunar Eclipse'", price: 250 },
+{ name: "Air Jordan 5 Retro 'Golden Fusion'", price: 280 },
+{ name: "Air Jordan 7 Retro 'Galactic Blue'", price: 240 },
+{ name: "Air Jordan 11 Retro Low 'Sunset Glow'", price: 230 },
+{ name: "Air Jordan 4 Retro 'Neon Blaze'", price: 260 },
+{ name: "Air Jordan 6 Retro 'Emerald Dream'", price: 270 },
+{ name: "Air Jordan 8 Retro 'City Lights'", price: 255 },
+{ name: "Air Jordan 12 Retro 'Electric Pulse'", price: 290 },
+{ name: "Air Jordan 2 Retro 'Mystic Red'", price: 225 },
+{ name: "Air Jordan 13 Retro 'Aurora Borealis'", price: 300 },
+{ name: "Air Jordan 9 Retro 'Sunrise Gold'", price: 245 },
+{ name: "Air Jordan 14 Retro 'Silver Lining'", price: 280 },
+{ name: "Air Jordan 10 Retro 'Midsummer Night'", price: 235 },
+{ name: "Air Jordan 17 Retro 'Eclipse Black'", price: 310 },
+{ name: "Air Jordan 15 Retro 'Vivid Teal'", price: 255 },
+{ name: "Air Jordan 18 Retro 'Velvet Crush'", price: 325 },
+{ name: "Air Jordan 19 Retro 'Moonlit Serenade'", price: 340 },
+{ name: "Air Jordan 20 Retro 'Starlight Voyage'", price: 315 },
+{ name: "Air Jordan 16 Retro 'Royal Velvet'", price: 300 }
+    ];
+
+    // Function to display the current list of shoes
+    function displayShoes() {
+        var shoesListDiv = document.getElementById("shoesList");
+        shoesListDiv.innerHTML = "";
+
+        for (var i = 0; i < shoes.length; i++) {
+            var shoeDiv = document.createElement("div");
+            shoeDiv.className = "shoe";
+            shoeDiv.innerHTML = "<p>" + shoes[i].name + " - $" + shoes[i].price + "</p>";
+            shoesListDiv.appendChild(shoeDiv);
+        }
+    }
+
+    // Function to perform the bubble sort on the shoes array
+    async function bubbleSort() {
+        var n = shoes.length;
+
+        for (var i = 0; i < n - 1; i++) {
+            for (var j = 0; j < n - i - 1; j++) {
+                // Visualize swapping
+                await swapAndDisplay(j);
+                
+                if (shoes[j].price > shoes[j + 1].price) {
+                    // Swap shoes[j] and shoes[j+1]
+                    var temp = shoes[j];
+                    shoes[j] = shoes[j + 1];
+                    shoes[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // Function to swap and display the shoes
+    async function swapAndDisplay(index) {
+        var shoesListDiv = document.getElementById("shoesList");
+        var shoesDivs = shoesListDiv.getElementsByClassName("shoe");
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        shoesDivs[index].style.transform = "translateX(50px)";
+        shoesDivs[index + 1].style.transform = "translateX(-50px)";
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Swap the elements in the DOM
+        shoesListDiv.insertBefore(shoesDivs[index + 1], shoesDivs[index]);
+
+        shoesDivs[index].style.transform = "translateX(0)";
+        shoesDivs[index + 1].style.transform = "translateX(0)";
+    }
+
+    // Function to sort the shoes and display the updated list
+    async function sortShoes() {
+        await bubbleSort();
+        displayShoes();
+    }
+
+    // Initial display of shoes
+    displayShoes();
+</script>
 
 </body>
 </html>
