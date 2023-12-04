@@ -107,10 +107,10 @@
         var shoesListDiv = document.getElementById("shoesList");
         var shoesDivs = shoesListDiv.getElementsByClassName("shoe");
 
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 100));
 
-        shoesDivs[index].style.transform = "translateX(50px)";
-        shoesDivs[index + 1].style.transform = "translateX(-50px)";
+        shoesDivs[index].style.transform = "translateX(60px)";
+        shoesDivs[index + 1].style.transform = "translateX(-60px)";
 
         await new Promise(resolve => setTimeout(resolve, 300));
 
