@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Shoes Sorter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
 <body>
 
-<h1>The iframe element</h1>
+<h1>Jordan Shoes Sorter</h1>
 
-<iframe src="https://r.search.yahoo.com/_ylt=Awr9_VFpPmZlx.wuwrRXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1701228265/RO=10/RU=https%3a%2f%2f1v1.lol%2f/RK=2/RS=WavMNhJfaMoFNTC6shDSPNpOKlY-" title="W3Schools Free Online Web Tutorials">
-</iframe>
+<p>Click the button to sort the shoes by price:</p>
+
+<button onclick="sortShoes()">Sort Shoes</button>
+
+<div id="shoesList">
+    <!-- The list of shoes will be displayed here -->
+</div>
+
+<script>
+    // Array of fictional Jordan shoes with prices
+    var shoes = [
+        { name: "Air Jordan 1 Retro High OG 'Midnight Haze'", price: 220 },
+        { name: "Air Jordan 3 Retro 'Lunar Eclipse'", price: 250 },
+        // ... (add the rest of the shoes here)
+        { name: "Air Jordan 16 Retro 'Royal Velvet'", price: 300 }
+    ];
+
+    // Function to display the current list of shoes
+    function displayShoes() {
+        var shoesListDiv = document.getElementById("shoesList");
+        shoesListDiv.innerHTML = "<h2>Current Shoes:</h2>";
+
+        for (var i = 0; i < shoes.length; i++) {
+            shoesListDiv.innerHTML += "<p>" + shoes[i].name + " - $" + shoes[i].price + "</p>";
+        }
+    }
+
+    // Function to perform the bubble sort on the shoes array
+    function bubbleSort() {
+        var n = shoes.length;
+
+        for (var i = 0; i < n - 1; i++) {
+            for (var j = 0; j < n - i - 1; j++) {
+                if (shoes[j].price > shoes[j + 1].price) {
+                    // Swap shoes[j] and shoes[j+1]
+                    var temp = shoes[j];
+                    shoes[j] = shoes[j + 1];
+                    shoes[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // Function to sort the shoes and display the updated list
+    function sortShoes() {
+        bubbleSort();
+        displayShoes();
+    }
+
+    // Initial display of shoes
+    displayShoes();
+</script>
 
 </body>
 </html>
