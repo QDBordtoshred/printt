@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Shoes Sorter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #shoesList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .shoe {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .yellow-glow {
+            animation: yellowGlow 0.5s infinite alternate;
+        }
+
+        .green-glow {
+            animation: greenGlow 0.5s infinite alternate;
+        }
+
+        @keyframes yellowGlow {
+            from {
+                box-shadow: 0 0 5px yellow;
+            }
+            to {
+                box-shadow: 0 0 10px yellow;
+            }
+        }
+
+        @keyframes greenGlow {
+            from {
+                box-shadow: 0 0 5px green;
+            }
+            to {
+                box-shadow: 0 0 10px green;
+            }
+        }
+
+        #sortButton, #enterButton {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #modelInput, #priceInput {
+            margin: 10px;
+            padding: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Jordan Shoes Sorter</h1>
+
+<p>Enter the details below and click "Enter" to add a new shoe:</p>
+
+<input type="text" id="modelInput" placeholder="Enter Shoe Model">
+<input type="number" id="priceInput" placeholder="Enter Shoe Price">
+
+<button id="enterButton" onclick="addShoe()">Enter</button>
+<button id="sortButton" onclick="sortShoes()">Sort Shoes</button>
+
+<div id="shoesList">
+    <!-- The list of shoes will be displayed here -->
+</div>
+
+<script>
+    var shoes = [];
+
+    function displayShoes() {
+        var shoesListDiv = document.getElementById("shoesList");
+        shoesListDiv.innerHTML = "";
+
+        for (var i = 0; i < shoes.length; i++) {
+            var shoeDiv = document.createElement("div");
+            shoeDiv.className = "shoe";
+            shoeDiv.innerHTML = "<p>" + shoes[i].name + " - $" + shoes[i].price + "</p>";
+            shoesListDiv.appendChild(shoeDiv);
+        }
+    }
+
+    async function bubbleSort() {
+        var n = shoes.length;
+
+        for (var i = 0; i < n - 1; i++) {
+            for (var j = 0; j < n - i - 1; j++) {
+                await swapAndDisplay(j, j + 1);
+
+                if (shoes[j].price > shoes[j + 1].price) {
+                    var temp = shoes[j];
+                    shoes[j] = shoes[j + 1];
+                    shoes[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    async function swapAndDisplay(index1, index2) {
+        var shoesListDiv = document.getElementById("shoesList");
+        var shoesDivs = shoesListDiv.getElementsByClassName("shoe");
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        shoesDivs[index1].classList.add("yellow-glow");
+        shoesDivs[index2].classList.add("yellow-glow");
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        shoesListDiv.insertBefore(shoesDivs[index2], shoesDivs[index1]);
+
+        shoesDivs[index1].classList.remove("yellow-glow");
+        shoesDivs[index2].classList.remove("yellow-glow");
+
+        shoesDivs[index1].classList.add("green-glow");
+        shoesDivs[index2].classList.add("green-glow");
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        shoesDivs[index1].classList.remove("green-glow");
+        shoesDivs[index2].classList.remove("green-glow");
+    }
+
+    async function sortShoes() {
+        await bubbleSort();
+        displayShoes();
+    }
+
+    function addShoe() {
+        var modelInput = document.getElementById("modelInput");
+        var priceInput = document.getElementById("priceInput");
+
+        var model = modelInput.value.trim();
+        var price = parseFloat(priceInput.value);
+
+        if (model !== "" && !isNaN(price)) {
+            shoes.push({ name: model, price: price });
+            displayShoes();
+        }
+
+        // Clear input fields
+        modelInput.value = "";
+        priceInput.value = "";
+    }
+
+    displayShoes();
+</script>
+
+</body>
+</html>
