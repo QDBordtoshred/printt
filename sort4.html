@@ -137,12 +137,12 @@
         var shoesListDiv = document.getElementById("shoesList");
         var shoesDivs = shoesListDiv.getElementsByClassName("shoe");
 
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 400));
 
         shoesDivs[index1].classList.add("yellow-glow");
         shoesDivs[index2].classList.add("yellow-glow");
 
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 400));
 
         shoesListDiv.insertBefore(shoesDivs[index2], shoesDivs[index1]);
 
@@ -152,7 +152,7 @@
         shoesDivs[index1].classList.add("green-glow");
         shoesDivs[index2].classList.add("green-glow");
 
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 400));
 
         shoesDivs[index1].classList.remove("green-glow");
         shoesDivs[index2].classList.remove("green-glow");
