@@ -19,20 +19,7 @@
 <link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/cg/style.css?v=106">
 <script id="adv" data-cfasync="false">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
 </head>
-<body class="body easyui-layout" id="cc" style="visibility:hidden;">
-<div id="sign" class="easyui-window" title="Coding Ground" data-options="iconCls:'icon-login',modal:true, maximizable:false, closed:true, minimizable:false" style="width:530px;height:475px;padding:10px;"></div>
-<div class="north" id="north" data-options="region:'north'">
-   <a href="codingground.htm"><img src="/cg/images/logo.png" alt="Online Java Compiler" class="logo" id="logo"/></a>
-   <h1 class="title" id="main-title">Online Java Compiler</h1>
-   <span id="edit-title"><a href="javascript:void(0);" class="easyui-linkbutton" onclick="setProjectTitle()" data-options="plain:true,iconCls:'fal fa-edit'" style="float:right"></a></span>
-   <div class="easyui-panel main-menu" id="main-menu" data-options="border:false">
-   <a id="login" onclick="openLogin();" href="javascript:void(0);" class="right-align easyui-linkbutton" data-options="iconCls:'fal fa-sign-in fa-lg', plain:true">Login</a>
-   <a id="logout" href="javascript:void(0);" class="right-align display-none easyui-menubutton" data-options="menu:'#mm1', iconCls:'fal fa-sign-out fa-lg'">Logout</a>
-   <a id="setting" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm3',iconCls:'fal fa-cog fa-lg'">Setting</a>
-   <a id="edit" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm2',iconCls:'fal fa-pen-to-square fa-lg'">Edit</a>
-   <a id="project" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm4', plain:true, iconCls:'fal fa-grid-2 fa-lg'">Project</a>
-  </div>
-</div>
+
 <div id="loading"><div class="loader"></div></div>
 <div id="mm1" style="width:150px;">
    <div onclick="getProjects()"  data-options="iconCls:'fal fa-grid-2 fa-sm'">My Projects</div>
